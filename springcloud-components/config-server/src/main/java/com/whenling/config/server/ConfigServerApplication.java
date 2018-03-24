@@ -13,4 +13,5 @@ public class ConfigServerApplication {
 	public static void main(String[] args) {
 		new SpringApplicationBuilder(ConfigServerApplication.class).run(args);
 	}
+
 }

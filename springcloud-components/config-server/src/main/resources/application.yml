@@ -9,7 +9,8 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/xiangxik/castle-microservices-platform/module-configs
+          uri: https://github.com/xiangxik/castle-microservices-platform
+          searchPaths: module-configs
         health:
           enabled: false
 security:
