@@ -4,15 +4,15 @@ test:
     password: '{cipher}af92d9852afdeb07d311a8c48519941ed5749f65fb75c4d613a283460903dd79'
 zuul:
   routes: 
-    testRoute:
+    whenling:
       path: /whenling
       url: http://www.whenling.com
-    abc:
+    eureka:
       path: /eureka/**
       serviceId: eureka-server
-    bcd:
+    hystrix:
       path: /hystrix-dashboard
       url: metrics-hystrix-dashboard
-    gp:
+    getconfig:
       path: /gg/**
       url: forward:/gp
