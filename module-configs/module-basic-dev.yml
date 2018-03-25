@@ -1,3 +1,3 @@
 spring:
   mvc:
-    static-path-pattern=/asset/**
+    static-path-pattern: /asset/**
