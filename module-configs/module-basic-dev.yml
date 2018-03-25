@@ -1,3 +1,2 @@
-spring:
-  mvc:
-    static-path-pattern: /asset/**
+author:
+ name: kxx
