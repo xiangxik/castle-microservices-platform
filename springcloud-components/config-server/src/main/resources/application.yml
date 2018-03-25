@@ -13,10 +13,10 @@ spring:
           searchPaths: module-configs
         health:
           enabled: false
-security:
-  user:
-    name: root
-    password: qwe123
+  security:
+    user:
+      name: root
+      password: qwe123
 management:
   security:
     enabled: false

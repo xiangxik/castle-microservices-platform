@@ -4,10 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.whenling</groupId>
-		<artifactId>springcloud-components</artifactId>
+		<artifactId>castle-microservices-platform</artifactId>
 		<version>0.01</version>
 	</parent>
-	<artifactId>router-filter-zuul</artifactId>
+	<artifactId>module-basic</artifactId>
 
 	<dependencies>
 		<dependency>
@@ -15,12 +15,12 @@
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 	</dependencies>
 </project>

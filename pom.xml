@@ -10,19 +10,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<servlet-api.version>3.1.0</servlet-api.version>
-		<springboot.version>1.5.10.RELEASE</springboot.version>
-
-		<thymeleaf.version>3.0.9.RELEASE</thymeleaf.version>
-		<thymeleaf-extras-springsecurity4.version>3.0.2.RELEASE</thymeleaf-extras-springsecurity4.version>
-		<thymeleaf-extras-conditionalcomments.version>2.1.2.RELEASE</thymeleaf-extras-conditionalcomments.version>
-		<thymeleaf-layout-dialect.version>2.3.0</thymeleaf-layout-dialect.version>
-		<thymeleaf-extras-data-attribute.version>2.0.1</thymeleaf-extras-data-attribute.version>
-		<thymeleaf-extras-java8time.version>3.0.1.RELEASE</thymeleaf-extras-java8time.version>
-
-		<jooq.version>3.10.5</jooq.version>
-
-		<querydsl.version>4.1.4</querydsl.version>
-		<junit.version>4.12</junit.version>
+		<springboot.version>2.0.0.RELEASE</springboot.version>
 	</properties>
 
 	<dependencyManagement>
@@ -37,55 +25,22 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Edgware.SR2</version>
+				<version>Finchley.M9</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<dependency>
-				<groupId>org.thymeleaf</groupId>
-				<artifactId>thymeleaf</artifactId>
-				<version>${thymeleaf.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.thymeleaf</groupId>
-				<artifactId>thymeleaf-spring4</artifactId>
-				<version>${thymeleaf.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.thymeleaf.extras</groupId>
-				<artifactId>thymeleaf-extras-conditionalcomments</artifactId>
-				<version>${thymeleaf-extras-conditionalcomments.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.thymeleaf.extras</groupId>
-				<artifactId>thymeleaf-extras-java8time</artifactId>
-				<version>${thymeleaf-extras-java8time.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.thymeleaf.extras</groupId>
-				<artifactId>thymeleaf-extras-springsecurity4</artifactId>
-				<version>${thymeleaf-extras-springsecurity4.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.jooq</groupId>
-				<artifactId>jooq</artifactId>
-				<version>${jooq.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.jooq</groupId>
-				<artifactId>jooq-meta</artifactId>
-				<version>${jooq.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.jooq</groupId>
-				<artifactId>jooq-codegen</artifactId>
-				<scope>provided</scope>
-				<version>${jooq.version}</version>
-			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/libs-milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 	<build>
 		<resources>
 			<resource>
@@ -115,6 +70,10 @@
 					<optimize>true</optimize>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
 		</plugins>
 	</build>
 	<developers>
@@ -126,5 +85,6 @@
 	</developers>
 	<modules>
 		<module>springcloud-components</module>
+		<module>module-basic</module>
 	</modules>
 </project>
