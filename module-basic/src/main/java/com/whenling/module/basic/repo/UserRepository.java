@@ -11,6 +11,8 @@ import com.whenling.module.basic.entity.User;
 public interface UserRepository
 		extends JpaRepository<User, Long>, QuerydslPredicateExecutor<User>, QuerydslBinderCustomizer<QUser> {
 
+	User findByUsername(String username);
+
 	@Override
 	default void customize(QuerydslBindings bindings, QUser root) {
 		bindings.bind(root.username, root.name).first((path, value) -> path.contains(value));
