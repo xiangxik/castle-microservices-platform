@@ -86,5 +86,8 @@
 	<modules>
 		<module>springcloud-components</module>
 		<module>module-basic</module>
+		<module>module-authserver</module>
+		<module>module-schedule</module>
+		<module>module-workflow</module>
 	</modules>
 </project>
