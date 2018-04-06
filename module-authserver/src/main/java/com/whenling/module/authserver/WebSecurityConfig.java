@@ -1,9 +1,6 @@
 package com.whenling.module.authserver;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Primary;
-import org.springframework.core.Ordered;
-import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -13,13 +10,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @EnableWebSecurity
-@Primary
-@Order(Ordered.LOWEST_PRECEDENCE)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.formLogin().loginPage("/login").permitAll().and().authorizeRequests().anyRequest().authenticated();
+		http.authorizeRequests()
+				.antMatchers("/css/**", "/js/**", "/bower_components/**", "/img/**", "/message").permitAll()
+				.anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and().logout()
+				.permitAll();
 	}
 
 	@Override
@@ -34,7 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(new BCryptPasswordEncoder().encode("qwe123"));
+		System.out.println(new BCryptPasswordEncoder().encode("acmesecret"));
 	}
 
 }

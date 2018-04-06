@@ -8,7 +8,10 @@ spring:
     name: moduel-schedule
   thymeleaf:
     cache: false
-oauth2:
+security:
+  oauth2:
+    sso:
+      loginPath: /login
     client:
       accessTokenUri: http://localhost:8080/uaa/oauth/token
       userAuthorizationUri: http://localhost:8080/uaa/oauth/authorize

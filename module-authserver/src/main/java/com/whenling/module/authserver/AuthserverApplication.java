@@ -23,9 +23,8 @@ public class AuthserverApplication {
 		return Collections.<String, Object>singletonMap("message", "Yay!");
 	}
 
-	@RequestMapping("/user")
+	@RequestMapping(value = "/user", produces = "application/json")
 	public Principal user(Principal user) {
 		return user;
 	}
-
 }
