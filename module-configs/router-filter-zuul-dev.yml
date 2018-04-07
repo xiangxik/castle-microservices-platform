@@ -21,14 +21,14 @@ zuul:
       path: /uaa/**
       serviceId: authserver
       sensitiveHeaders: Cookie,Set-Cookie,Authorization
-      url: https://downstream
+      url: http://authserver
     schedule:
       path: /schedule/**
       serviceId: module-schedule
       sensitiveHeaders: Cookie,Set-Cookie,Authorization
-      url: https://downstream
+      url: http://module-schedule
     workflow:
       path: /workflow/**
       serviceId: module-workflow
       sensitiveHeaders: Cookie,Set-Cookie,Authorization
-      url: https://downstream
+      url: http://module-workflow
