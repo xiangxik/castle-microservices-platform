@@ -5,23 +5,10 @@ test:
 zuul:
   routes: 
     whenling:
-      path: /whenling
+      path: /whenling/**
       url: http://www.whenling.com
-    eureka:
-      path: /eureka/**
-      serviceId: eureka-server
-    hystrix:
-      path: /hystrix-dashboard
-      url: metrics-hystrix-dashboard
-    getconfig:
-      path: /gg/**
-      url: forward:/gp
-    authserver:
-      path: /uaa
-      serviceId: authserver
-    schedule:
-      path: /schedule
-      serviceId: module-schedule
-    workflow:
-      path: /workflow
-      serviceId: module-workflow
+    eureka-server: /eureka/**
+    metrics-hystrix-dashboard: /hystrix-dashboard/**
+    authserver: /uaa/**
+    module-schedule: /schedule/**
+    module-workflow: /workflow/**

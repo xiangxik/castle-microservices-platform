@@ -13,8 +13,8 @@ security:
     sso:
       loginPath: /login
     client:
-      accessTokenUri: http://localhost:8080/uaa/oauth/token
-      userAuthorizationUri: http://localhost:8080/uaa/oauth/authorize
+      accessTokenUri: http://localhost:9000/uaa/oauth/token
+      userAuthorizationUri: http://localhost:9000/uaa/oauth/authorize
       clientId: acme
       clientSecret: acmesecret
     resource:
@@ -25,3 +25,7 @@ security:
           -----END PUBLIC KEY-----
       id: openid
       serviceId: ${PREFIX:}resource
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
