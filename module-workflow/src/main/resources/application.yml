@@ -1,11 +1,11 @@
 server:
-  port: 8081
+  port: 8082
 management:
   security:
     enabled: false
 spring:
   application:
-    name: module-schedule
+    name: module-workflow
   thymeleaf:
     cache: false
 security:
@@ -25,7 +25,3 @@ security:
           -----END PUBLIC KEY-----
       id: openid
       serviceId: ${PREFIX:}resource
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/

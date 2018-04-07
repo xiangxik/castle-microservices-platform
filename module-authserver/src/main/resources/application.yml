@@ -2,8 +2,6 @@ logging:
   level:
     org.springframework.security: DEBUG
 server:
-  servlet:
-    contextPath: /uaa
   port: 8080
 spring:
   application:

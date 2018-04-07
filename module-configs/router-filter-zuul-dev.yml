@@ -16,3 +16,12 @@ zuul:
     getconfig:
       path: /gg/**
       url: forward:/gp
+    authserver:
+      path: /uaa
+      serviceId: authserver
+    schedule:
+      path: /schedule
+      serviceId: module-schedule
+    workflow:
+      path: /workflow
+      serviceId: module-workflow
