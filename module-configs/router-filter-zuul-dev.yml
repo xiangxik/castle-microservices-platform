@@ -17,6 +17,12 @@ zuul:
       url: http://www.whenling.com
     eureka-server: /eureka/**
     metrics-hystrix-dashboard: /hystrix-dashboard/**
-    authserver: /uaa/**
-    module-schedule: /schedule/**
-    module-workflow: /workflow/**
+    authserver:
+      path: /uaa/**
+      url: authserver
+    schedule:
+      path: /schedule/**
+      url: module-schedule
+    workflow:
+      path: /workflow/**
+      url: module-workflow

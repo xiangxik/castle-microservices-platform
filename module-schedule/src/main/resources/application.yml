@@ -13,8 +13,8 @@ security:
     sso:
       loginPath: /login
     client:
-      accessTokenUri: http://localhost:9000/uaa/oauth/token
-      userAuthorizationUri: http://localhost:9000/uaa/oauth/authorize
+      accessTokenUri: http://localhost:8080/oauth/token
+      userAuthorizationUri: http://localhost:8080/oauth/authorize
       clientId: acme
       clientSecret: acmesecret
     resource:
