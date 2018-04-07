@@ -19,10 +19,16 @@ zuul:
     metrics-hystrix-dashboard: /hystrix-dashboard/**
     authserver:
       path: /uaa/**
-      url: authserver
+      serviceId: authserver
+      sensitiveHeaders: Cookie,Set-Cookie,Authorization
+      url: https://downstream
     schedule:
       path: /schedule/**
-      url: module-schedule
+      serviceId: module-schedule
+      sensitiveHeaders: Cookie,Set-Cookie,Authorization
+      url: https://downstream
     workflow:
       path: /workflow/**
-      url: module-workflow
+      serviceId: module-workflow
+      sensitiveHeaders: Cookie,Set-Cookie,Authorization
+      url: https://downstream
