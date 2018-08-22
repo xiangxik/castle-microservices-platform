@@ -1,0 +1,34 @@
+test:
+  user:
+    name: ggcgabcdefddddd
+    password: '{cipher}af92d9852afdeb07d311a8c48519941ed5749f65fb75c4d613a283460903dd79'
+proxy:
+  auth:
+    routes:
+      module-schedule: oauth2
+      module-workflow: oauth2
+      authserver: oauth2
+      metrics-hystrix-dashboard: passthru
+      eureka-server: none
+zuul:
+  routes: 
+    whenling:
+      path: /whenling/**
+      url: http://www.whenling.com
+    eureka-server: /eureka/**
+    metrics-hystrix-dashboard: /hystrix-dashboard/**
+    authserver:
+      path: /uaa/**
+      serviceId: authserver
+      sensitiveHeaders: Cookie,Set-Cookie,Authorization
+      url: http://authserver
+    schedule:
+      path: /schedule/**
+      serviceId: module-schedule
+      sensitiveHeaders: Cookie,Set-Cookie,Authorization
+      url: http://module-schedule
+    workflow:
+      path: /workflow/**
+      serviceId: module-workflow
+      sensitiveHeaders: Cookie,Set-Cookie,Authorization
+      url: http://module-workflow

@@ -21,11 +21,11 @@ public class UserController {
 	@RequestMapping(value = "/page", method = RequestMethod.GET)
 	public Page<User> doPage(Predicate predicate, Pageable pageable) {
 		System.out.println("cc");
-		User user = new User();
-		user.setName("Admin2");
-		user.setUsername("admin2");
-		user.setPassword("qwe123");
-		userService.save(user);
+//		User user = new User();
+//		user.setName("Admin2");
+//		user.setUsername("admin2");
+//		user.setPassword("qwe123");
+//		userService.save(user);
 
 		return userService.findAll(predicate, pageable);
 	}

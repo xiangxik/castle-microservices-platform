@@ -4,12 +4,15 @@ spring:
   application:
     name: config-server
   profiles:
-    active: native
+    active: git
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/shared
+        git:
+          uri: https://github.com/xiangxik/castle-microservices-platform
+          searchPaths: module-configs
+        health:
+          enabled: false
   security:
     user:
       name: root
